@@ -1,6 +1,6 @@
 <!--- PAGE_TITLE --->
 
-_Expectations:  It can take an up to an average of **2 -4 hours** to read this documentation and complete this installation. Highly dependent on the Developer's local laptop and Internet speed._
+_Expectations:  It can take an up to an average of **2 -4 hours** to read this documentation and complete this installation. Highly dependent on the Developer's personal computer and Internet speed._
 
 **Caution**: This guide is recommended for ISLE Committers or Developers only and not for end-users.
 
@@ -10,17 +10,17 @@ Developers can follow this guide if they have edited their Dockerfiles with cust
 
 These images will contain the necessary base code, scripts and files to run the default sample `https://isle.localdomain`.
 
-The Demo ISLE Installation creates a local Islandora platform (`https://isle.localdomain`) on your workstation. This process includes an un-themed Drupal website and an empty Fedora repository so you may ingest test objects, add or edit metadata, update fields in SOLR indexing, develop code, and otherwise "kick the tires" on ISLE.
+The Demo ISLE Installation creates a local Islandora platform (`https://isle.localdomain`) on your personal computer. This process includes an un-themed Drupal website and an empty Fedora repository so you may ingest test objects, add or edit metadata, update fields in SOLR indexing, develop code, and otherwise "kick the tires" on ISLE.
 
 Please post questions to the public [Islandora ISLE Google group](https://groups.google.com/forum/#!forum/islandora-isle), or subscribe to receive emails. The [Glossary](../appendices/glossary.md) defines terms used in this documentation.
 
 ### Assumptions / Prerequisites
 
-* Laptop / workstation that conforms to the specifications outlined in the [Hardware Requirements](../install/host-hardware-requirements.md)
+* personal computer that conforms to the specifications outlined in the [Hardware Requirements](../install/host-hardware-requirements.md)
 
-* This image build site guide is designed for a local laptop / workstation that has already followed the appropriate setup and configuration instructions in the [Demo ISLE Installation](../install/install-demo.md) guide.
+* This image build site guide is designed for a local personal computer that has already followed the appropriate setup and configuration instructions in the [Demo ISLE Installation](../install/install-demo.md) guide.
 
-* Instructions below assume a MacOS or Linux workstation. Windows users may have to adjust / swap out various tools as needed.
+* Instructions below assume a MacOS or Linux personal computer. Windows users may have to adjust / swap out various tools as needed.
 
 * The ISLE project has been cloned from the ISLE project repository using the `master` branch. Do not build ISLE images with untested and developmental code. Only stable releases please.
 
@@ -75,7 +75,7 @@ islandoracollabgroup/isle-proxy    <none>              23cb1c73c232        2 wee
 
 ### Step 3a: Alternative for Non-ISLE Committers only (e.g. developers)
 
-If you're working in your own dockerhub environment (ie, not the offical `islandoracollabgroup` environment, then you'll need to change the following lines in the newly renamed `docker-compose.yml` file.
+If you're working in your own dockerhub environment (ie, not the official `islandoracollabgroup` environment, then you'll need to change the following lines in the newly renamed `docker-compose.yml` file.
 ```
     image: islandoracollabgroup/isle-mysql:latest
     image: islandoracollabgroup/isle-fedora:latest
@@ -115,7 +115,7 @@ This renamed `docker-compose-build.yml` file will tag all builds by default with
 
 Review the current tags found on the [Docker Containers & Images](../specifications/docker-containers-images.md) Specifications Page. Should the software version change, update this document with the new tags. You will need to tag each image further as needed. There are always two tags for every image, e.g. `latest` and the specific version of the primary software package used on the image or container. It is possible there will be more tags for different image versions in the future.
 
-For example if the installed proxy nginx software changes from `1.13` to `1.14`, change or add the new tag of `1.14`
+For example if the installed proxy Nginx software changes from `1.13` to `1.14`, change or add the new tag of `1.14`
 
 To learn more about tagging, read the official Docker [tag](https://docs.docker.com/engine/reference/commandline/tag/) documentation.
 
@@ -134,7 +134,7 @@ Developers, please note you are welcome to use tags that are useful for your ins
 
 ### Step 6: Push the Images to the Image Repository
 
-**Please note:** These steps assume use of Dockerhub. If you use a different Docker image repository, you'll need to change the following steps per their specific instructions.
+**Note:** These steps assume use of Dockerhub. If you use a different Docker image repository, you'll need to change the following steps per their specific instructions.
 
 `docker login`
 
@@ -146,7 +146,7 @@ Example output:
 * Enter your Dockerhub username
 * Enter your Dockerhub user password.
 
-Push the images one at a time. **Please note:** _Depending on your Internet connection's upload speed this process may take several hours._
+Push the images one at a time. **Note:** _Depending on your Internet connection's upload speed this process may take several hours._
 
 * `docker push islandoracollabgroup/isle-apache:latest`
 * `docker push islandoracollabgroup/isle-fedora:latest`
@@ -154,7 +154,7 @@ Push the images one at a time. **Please note:** _Depending on your Internet conn
 * `docker push islandoracollabgroup/isle-proxy:latest`
 * `docker push islandoracollabgroup/isle-solr:latest`
 
-Repeat the process with any additional tags. **Please note:** _Depending on your Internet connection's upload speed this process may take several minutes._
+Repeat the process with any additional tags. **Note:** _Depending on your Internet connection's upload speed this process may take several minutes._
 
 * `docker push islandoracollabgroup/isle-apache:2.4`
 * `docker push islandoracollabgroup/isle-fedora:3.8.1`
@@ -174,7 +174,7 @@ Repeat the process with any additional tags. **Please note:** _Depending on your
 
 Steps below are mandatory for any ISLE Committer but optional (though recommended) for any Developer.
 
-### Step 9: Delete All Recently Built and Pushed ISLE Images on Local Laptop
+### Step 9: Delete All Recently Built and Pushed ISLE Images on personal computer
 
 * `docker image ls`
 
@@ -191,6 +191,6 @@ Pull down the newly pushed images.
 
 Follow the instructions within the `docker-compose.yml` file or within the [Demo ISLE Installation](../install/install-demo.md) to start up containers and install the Demo ISLE Installation (`https://isle.localdomain`).
 
-Ensure that all components, connections etc are working, otherwise troubleshoot as required, making the appropriate fixes to the associated Dockerfiles, pushing changes to the ISLE project git repository and then REPEATING this entire build and push process.
+Ensure that all components, connections, etc. are working, otherwise troubleshoot as required, making the appropriate fixes to the associated Dockerfiles, pushing changes to the ISLE project git repository and then REPEATING this entire build and push process.
 
 Always test prior and post to ensure there are no issues pushed to end users.

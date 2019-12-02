@@ -44,7 +44,7 @@ The .env and tomcat.env Docker files are located in the folder with the docker-c
 ### Image Services
 | .env Variable                       | ISLE Services updated   | What it does                                                                                                                          |
 |-----------------------------------  |-----------------------  |-------------------------------------------------------------------------------------------------------------------------------------- |
-| CANTALOUPE_ADMIN_INTERFACE_ENABLE   | ImageServices           | Enables or Disables the Cantaloupe IIIF /admin control panel. Locatied at http://hostip:8083/cantaloupe/admin when true, else false.  |
+| CANTALOUPE_ADMIN_INTERFACE_ENABLE   | ImageServices           | Enables or Disables the Cantaloupe IIIF /admin control panel. Located at http://hostip:8083/cantaloupe/admin when true, else false.  |
 | CANTALOUPE_ADMIN_USER               | ImageServices           | Set the admin username to login to the admin panel.                                                                                   |
 | CANTALOUPE_ADMIN_PASS               | ImageServices           | Set the admin password to login to the admin panel.                                                                                   |
 
@@ -56,5 +56,3 @@ The .env and tomcat.env Docker files are located in the folder with the docker-c
 | TOMCAT_MANAGER_USER   | Fedora, Solr, ImageServices   | Set the manager username to login to the admin panel.   |
 | TOMCAT_MANAGER_PASS   | Fedora, Solr, ImageServices   | Set the manager password to login to the admin panel.   |
 
-
-**Return to [Remote Server ISLE Installation](../install/install-server.md).**

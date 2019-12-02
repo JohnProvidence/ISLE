@@ -6,13 +6,10 @@
   * `docker image ls`
   * `docker image rm -f <Docker IMAGE ID>`
 
-* Fork ISLE to personal / company github.com repo 
+* Fork ISLE to personal / company github.com repository 
   * https://github.com/Islandora-Collaboration-Group/ISLE
 
-* Fork ISLE-Documentation to personal / company github.com repo
-  * ISLE-Documentation https://github.com/Islandora-Collaboration-Group/ISLE-Documentation
-
-* Fork all ISLE images to personal / company github.com repos
+* Fork all ISLE images to personal / company github.com repositories
   * isle-ubuntu-basebox https://github.com/Islandora-Collaboration-Group/isle-ubuntu-basebox
   * isle-tomcat https://github.com/Islandora-Collaboration-Group/isle-tomcat
   * isle-fedora https://github.com/Islandora-Collaboration-Group/isle-fedora
@@ -21,13 +18,11 @@
   * isle-apache https://github.com/Islandora-Collaboration-Group/isle-apache
   * isle-mysql https://github.com/Islandora-Collaboration-Group/isle-mysql
 
-* Git clone the forked ISLE project git repo to your local development workstation.
+* Git clone the forked ISLE project git repository to your local development personal computer.
 
-* Git clone the forked ISLE images git repos into a sibling "images" directory
+* Git clone the forked ISLE images git repositories into a sibling "images" directory
 
-* Git clone the forked ISLE-Documentation git repo to your local development workstation.
-
-* Git checkout (make new) release branch in each repo for each image starting with and descending in this order:
+* Git checkout (make new) release branch in each repository for each image starting with and descending in this order:
   * isle-ubuntu-basebox
   * isle-tomcat
   * isle-fedora
@@ -36,7 +31,6 @@
   * isle-apache
   * isle-mysql
   * ISLE (main project)
-  * ISLE-Documentation
 
 ## Build Steps
 
@@ -109,7 +103,7 @@ The following software packages will be handled and updated by `apt-get`. Please
 #### isle-ubuntu-basebox - Build Actions / Steps
 
 * Start the update process with the `isle-ubuntu-basebox` image
-  * Clone down the **FORKED** `isle-ubuntu-basebox` to your local development workstation.
+  * Clone down the **FORKED** `isle-ubuntu-basebox` to your local development personal computer.
   * Create a new branch e.g. `ISLE-v.1.1.1`
 
 * Edit the following files with the version changes:
@@ -223,7 +217,7 @@ The following software packages will be handled and updated by `apt-get`. Please
 Assumptions: The `isle-ubuntu-basebox` has been already updated, built and pushed to Dockerhub. This image will work (build) from that foundational image.
 
 * Start the update process with the `isle-tomcat` image
-  * Clone down the **FORKED** `isle-tomcat` to your local development workstation.
+  * Clone down the **FORKED** `isle-tomcat` to your local development personal computer.
   * Create a new branch e.g. `ISLE-v.1.1.1`
 
 * Edit the following files with the version changes:
@@ -308,7 +302,7 @@ The following software packages will be handled and updated by `apt-get`. Please
   * version `3.8.1`
   * **Not eligible for upgrade**
 
-* **Gsearch**
+* **GSearch**
   * `v2.9.0`
   * `git clone https://github.com/discoverygarden/gsearch.git`
   * `Latest commit 701400e  on Dec 11, 2017`
@@ -380,26 +374,26 @@ The following software packages will be handled and updated by `apt-get`. Please
     * `git checkout last used build commit` i.e. `git checkout ee7e9d32a71381abfa5c3ead13255c0c5b66ed45`
     * Compare both directories using a visual diff tool like `Kaleidoscope` (MAC), `diff` or `KDiff3` (Linux)
     * Note the differences in files and the line numbers for inclusion in release notes.
-      * `datastream_info_to_solr.xslt` - Lines 35 - 49 - new lines & content added
+      * `datastream_info_to_solr.xslt` - Lines 35-49 - new lines & content added
       * `RELS-EXT_to_solr.xslt`
         * Line 7 - modified
         * Line 8 - new line & content added
         * Line 42 - new line & content added
         * Line 49 - new line & content added
-      * `slurp_all_MODS_to_solr.xslt` - Lines 289 - 300 new lines & content added
+      * `slurp_all_MODS_to_solr.xslt` - Lines 289-300 new lines & content added
 
 #### isle-fedora - Build Actions / Steps
 
 Assumptions: The `isle-ubuntu-basebox` & `isle-tomcat` images have been already updated, built and pushed to Dockerhub. This image will work (build) from those foundational images.
 
 * Start the update process with the `isle-fedora` image
-  * Clone down the **FORKED** `isle-fedora` to your local development workstation.
+  * Clone down the **FORKED** `isle-fedora` to your local development personal computer.
   * Create a new branch e.g. `ISLE-v.1.1.1`
 
 * Edit the following files with the version changes:
   * `Dockerfile`
     * Line 1: change the tag from `FROM islandoracollabgroup/isle-tomcat:x` to `isle-tomcat:1.1.1`
-    * Line 53: change `vx.x.x` in the curl url to `v.7.1.12`
+    * Line 53: change `vx.x.x` in the curl URL to `v.7.1.12`
     * Line 62: change `MAVEN_VERSION:-x.x.x` to `MAVEN_VERSION:-3.6.0`
     * Line 63: change `ANT_VERSION:-x.xx.x` to `ANT_VERSION:-1.9.14`
 
@@ -505,13 +499,13 @@ The following software packages will be handled and updated by `apt-get`. Please
 Assumptions: The `isle-ubuntu-basebox` & `isle-tomcat` images have been already updated, built and pushed to Dockerhub. This image will work (build) from those foundational images.
 
 * Start the update process with the `isle-image-services` image
-  * Clone down the **FORKED** `isle-image-services` to your local development workstation.
+  * Clone down the **FORKED** `isle-image-services` to your local development personal computer.
   * Create a new branch e.g. `ISLE-v.1.1.1`
 
 * Edit the following files with the version changes:
   * `Dockerfile`
     * Line 1: change the tag from `FROM islandoracollabgroup/isle-tomcat:x` to `isle-tomcat:1.1.1`
-    * Line 87: change `vx.x.x` in the curl url to `v4.0.1` (Not done on March 25)
+    * Line 87: change `vx.x.x` in the curl URL to `v4.0.1` (Not done on March 25)
 
 * Commit the changes to git
 
@@ -592,7 +586,7 @@ Suggested outcome:
 Assumptions: The `isle-ubuntu-basebox` & `isle-tomcat` images have been already updated, built and pushed to Dockerhub. This image will work (build) from those foundational images.
 
 * Start the update process with the `isle-solr` image
-  * Clone down the **FORKED** `isle-solr` to your local development workstation.
+  * Clone down the **FORKED** `isle-solr` to your local development personal computer.
   * Create a new branch e.g. `ISLE-v.1.1.1`
 
 * Edit the following files with the version changes:
@@ -816,7 +810,7 @@ The following software packages will be handled and updated by `composer`. Pleas
 Assumptions: The `isle-ubuntu-basebox` & `isle-tomcat` images have been already updated, built and pushed to Dockerhub. This image will work (build) from those foundational images.
 
 * Start the update process with the `isle-apache` image
-  * Clone down the **FORKED** `isle-apache` to your local development workstation.
+  * Clone down the **FORKED** `isle-apache` to your local development personal computer.
   * Create a new branch e.g. `ISLE-v.1.1.1`
 
 * Edit the following files with the version changes:
@@ -888,7 +882,7 @@ Suggested Outcome:
 
 ### Recommendations
 
-* Upgrade this image by simple reruning the build process. It will pull the newest version (`5.7.25-1debian9`)of the official image.
+* Upgrade this image by simple rerunning the build process. It will pull the newest version (`5.7.25-1debian9`)of the official image.
 
 ### (Optional) Manual method of reviewing image
 * `docker run -p 3306:3306 -it --rm islandoracollabgroup/isle-mysql:1.1 bash`
@@ -896,7 +890,7 @@ Suggested Outcome:
 ### Review & Build Process
 
 * Start the update process with the `isle-mysql` image
-  * Clone down the **FORKED** `isle-mysql` to your local development workstation.
+  * Clone down the **FORKED** `isle-mysql` to your local development personal computer.
   * Create a new branch e.g. `ISLE-v.1.1.1`
 
 * Edit the following files with the version changes:
@@ -912,7 +906,7 @@ Suggested Outcome:
 
 * Test with new images
 
-* Run Makefile with `docker-build` etc.
+* Run Makefile with `docker-build`, etc.
 
 ```bash
 
@@ -933,8 +927,8 @@ Suggested outcome:
 * `1.1.1` (new image build with sec updates 3/25/2019)
 * `latest ` (new image build with sec updates 3/25/2019)
 
-* deprecate 5.6 (april 2018)
-* fix latest from april 2018 to 3/25/2019)
+* deprecate 5.6 (April 2018)
+* fix latest from April 2018 to 3/25/2019)
 
 ---
 
@@ -944,7 +938,7 @@ Suggested outcome:
   * Did all containers start?
 
 * Install site
-  * `docker exec -it isle-apache-ld bash /utility-scripts/isle_drupal_build_tools/isle_islandora_installer.sh`
+  * `docker exec -it isle-apache-ld bash -c "cd /utility-scripts/isle_drupal_build_tools && ./isle_islandora_installer.sh`
 
 * Test ingest for all content types
 
@@ -952,6 +946,6 @@ Suggested outcome:
 
 ## All images  - Release
 
-* **Image Code** - git push image repo edits to personal / company remotes
+* **Image Code** - git push image repository edits to personal / company remotes
 
 * **ISLE** code comment out build / context blocks and any other local dev edits
